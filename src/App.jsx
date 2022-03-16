@@ -30,12 +30,16 @@ const App = () => {
     };
     let input = document.querySelector("input");
 
-    for (let j = 1; j < input.value + 1; j++) {
+    for (let j = 1; j <= input.value ; j++) {
+      
       let { x, y, w, h } = state;
       if (j === 1) {
+    
+
         x = canvas.width / 2 - w / 2;
         new Rectangle(x, y, w, h);
       } else if (j === 2) {
+        
         x = canvas.width / 4 - w / 3;
         y += 250;
 
@@ -44,6 +48,7 @@ const App = () => {
           x += w + 200;
         }
       } else if (j === 3) {
+        console.log(j)
         x = canvas.width / 2 + w / 2;
         y += 500;
         for (let i = 1; i <= 2; i++) {
@@ -60,7 +65,7 @@ const App = () => {
       ctx.fillRect(x, y, w, h);
       ctx.fill();
       ctx.stroke();
-      console.log(x, y, w, h);
+      // console.log(x, y, w, h);
       ctx.fillStyle = "black";
       ctx.font = "bold 9pt Verdana";
       ctx.textAlign = "center";
